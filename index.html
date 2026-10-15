@@ -1,922 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b20">
-
-<title>Elite Global Pathways Limited</title>
-
-<meta name="description" content="Connecting African Students to Global Education. Explore international education opportunities with Elite Global Pathways Limited.">
-
-<style>
-:root {
-    --bg: #080b20;
-    --card: rgba(255,255,255,.07);
-    --cyan: #00eaff;
-    --lime: #baff39;
-    --pink: #ff4fc8;
-    --purple: #8b5cf6;
-    --white: #f5f7ff;
-    --muted: #b9bfd8;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
-    color: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 10% 15%, #18245b, transparent 35%),
-        radial-gradient(circle at 90% 75%, #35134e, transparent 35%),
-        var(--bg);
-}
-
-.orb {
-    position: absolute;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: .3;
-    animation: float 12s ease-in-out infinite alternate;
-}
-
-.orb.one {
-    background: var(--cyan);
-    top: 5%;
-    left: -100px;
-}
-
-.orb.two {
-    background: var(--pink);
-    right: -100px;
-    top: 45%;
-    animation-delay: -4s;
-}
-
-.orb.three {
-    background: var(--purple);
-    bottom: -100px;
-    left: 30%;
-    animation-delay: -7s;
-}
-
-@keyframes float {
-    to {
-        transform: translate(45px, -35px) scale(1.2);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b35">
+  <meta name="description" content="Elite Global Pathways Limited helps students explore international higher-education opportunities, university admissions, and scholarship options.">
+  <title>Elite Global Pathways Limited | Your Global Future</title>
+  <style>
+    :root {
+      --navy: #071b35;
+      --navy2: #0c2b50;
+      --gold: #e8b64b;
+      --gold-light: #ffda7c;
+      --cream: #f7f8fc;
+      --ink: #18253a;
+      --muted: #66748a;
+      --white: #fff;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 24px 70px rgba(4, 17, 37, .18);
     }
-}
-
-/* NAVIGATION */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 14px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    background: rgba(8,11,32,.9);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    backdrop-filter: blur(18px);
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-box {
-    width: 55px;
-    height: 55px;
-    flex-shrink: 0;
-    border-radius: 14px;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    background: white;
-    border: 1px solid var(--cyan);
-    box-shadow: 0 0 20px rgba(0,234,255,.15);
-}
-
-.logo-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 3px;
-}
-
-.logo-fallback {
-    color: #07101c;
-    font-size: 19px;
-    font-weight: 900;
-}
-
-.brand-text h2 {
-    font-size: 14px;
-    line-height: 1.3;
-}
-
-.brand-text span {
-    font-size: 10px;
-    color: var(--cyan);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
-
-.nav-links a {
-    color: var(--muted);
-    font-size: 13px;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: var(--cyan);
-}
-
-.nav-links .nav-cta {
-    background: linear-gradient(100deg, var(--cyan), var(--lime));
-    color: #07101c;
-    padding: 10px 17px;
-    border-radius: 25px;
-    font-weight: 800;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 85vh;
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    align-items: center;
-    gap: 50px;
-    padding: 80px 8%;
-}
-
-.badge {
-    display: inline-block;
-    padding: 8px 14px;
-    margin-bottom: 22px;
-    border: 1px solid rgba(0,234,255,.4);
-    border-radius: 30px;
-    background: rgba(0,234,255,.07);
-    color: var(--cyan);
-    font-size: 11px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 5.5vw, 68px);
-    line-height: 1.08;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-}
-
-.gradient-text {
-    background: linear-gradient(
-        90deg,
-        var(--cyan),
-        var(--purple),
-        var(--pink),
-        var(--lime)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.hero-copy > p {
-    max-width: 600px;
-    margin-bottom: 30px;
-    color: var(--muted);
-    font-size: 15px;
-}
-
-.buttons {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-size: 13px;
-    font-weight: 800;
-    transition: .25s;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-.btn-primary {
-    color: #07101c;
-    background: linear-gradient(100deg, var(--cyan), var(--lime));
-}
-
-.btn-secondary {
-    color: white;
-    background: rgba(255,255,255,.06);
-    border-color: rgba(255,255,255,.2);
-}
-
-.btn-pink {
-    color: white;
-    background: linear-gradient(100deg, var(--pink), var(--purple));
-}
-
-/* MAIN LOGO CARD */
-
-.visual-card {
-    padding: 30px;
-    border-radius: 28px;
-    border: 1px solid rgba(255,255,255,.14);
-    background: var(--card);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 25px 80px rgba(0,0,0,.25);
-    animation: cardFloat 6s ease-in-out infinite;
-}
-
-@keyframes cardFloat {
-    50% {
-        transform: translateY(-12px);
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink); background: var(--cream); line-height: 1.6;
     }
-}
-
-.visual-logo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 22px;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 25px;
-    background: white;
-    border: 1px solid var(--cyan);
-    box-shadow: 0 0 35px rgba(0,234,255,.12);
-}
-
-.visual-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 6px;
-}
-
-.visual-logo .logo-fallback {
-    font-size: 40px;
-}
-
-.visual-card h2 {
-    text-align: center;
-    font-size: 23px;
-    margin-bottom: 8px;
-}
-
-.visual-card > p {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-top: 12px;
-    padding: 13px;
-    border-radius: 13px;
-    background: rgba(255,255,255,.045);
-    border: 1px solid rgba(255,255,255,.07);
-}
-
-.feature-icon {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    background: rgba(0,234,255,.12);
-    font-size: 20px;
-}
-
-.feature h3 {
-    font-size: 13px;
-}
-
-.feature p {
-    font-size: 11px;
-    color: var(--muted);
-}
-
-/* CONTENT SECTIONS */
-
-section.content-section {
-    padding: 75px 8%;
-}
-
-.section-heading {
-    max-width: 700px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.section-heading > span {
-    color: var(--lime);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.section-heading h2 {
-    font-size: clamp(28px, 4vw, 43px);
-    line-height: 1.2;
-    margin: 12px 0;
-}
-
-.section-heading > p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.about-grid,
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.info-card {
-    padding: 27px;
-    border-radius: 20px;
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,.1);
-    transition: .3s;
-}
-
-.info-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(0,234,255,.4);
-}
-
-.info-card .icon {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.info-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.info-card p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* STEPS */
-
-.step {
-    text-align: center;
-    padding: 28px 20px;
-    border-radius: 20px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.1);
-}
-
-.step-number {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 18px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: #07101c;
-    background: linear-gradient(135deg, var(--cyan), var(--lime));
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.step h3 {
-    margin-bottom: 9px;
-}
-
-.step p {
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 20px;
-}
-
-/* CALL TO ACTION */
-
-.cta-section {
-    padding: 40px 8% 90px;
-}
-
-.cta-box {
-    padding: 55px 25px;
-    text-align: center;
-    border-radius: 28px;
-    background:
-        radial-gradient(circle at 0 0, rgba(0,234,255,.14), transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(255,79,200,.15), transparent 40%),
-        rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.12);
-}
-
-.cta-box h2 {
-    font-size: clamp(28px, 4vw, 43px);
-    margin-bottom: 15px;
-}
-
-.cta-box > p {
-    max-width: 650px;
-    margin: 0 auto 25px;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.cta-box .buttons {
-    justify-content: center;
-}
-
-/* FOOTER */
-
-footer {
-    padding: 35px 8%;
-    border-top: 1px solid rgba(255,255,255,.1);
-    background: rgba(0,0,0,.15);
-}
-
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.footer-brand {
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.footer-brand span {
-    color: var(--cyan);
-}
-
-footer p {
-    color: var(--muted);
-    font-size: 11px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 17px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.footer-links a:hover {
-    color: var(--cyan);
-}
-
-.disclaimer {
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,.07);
-    color: #969db9;
-    font-size: 11px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
-        padding-top: 60px;
-        gap: 40px;
+    a { color: inherit; text-decoration: none; }
+    .topbar { background: #041326; color: #dbe5f2; font-size: .86rem; padding: 9px 5%; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .topbar a:hover { color: var(--gold-light); }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(7,27,53,.96); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1180px; margin:auto; padding: 15px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; color:#fff; min-width:0; }
+    .brand-mark { width:48px; height:48px; border:1px solid rgba(232,182,75,.65); border-radius:12px; display:grid; place-items:center; overflow:hidden; background:#fff; flex-shrink:0; }
+    .brand-mark img { width:100%; height:100%; object-fit:contain; padding:2px; }
+    .brand-fallback { color:var(--navy); font-weight:900; font-size:.85rem; }
+    .brand-name { font-weight:800; font-size:.95rem; letter-spacing:.035em; line-height:1.25; }
+    .brand-name small { display:block; color:var(--gold-light); font-weight:600; font-size:.69rem; letter-spacing:.16em; margin-top:4px; }
+    .nav-links { display:flex; gap:24px; align-items:center; color:#e6edf7; font-size:.92rem; }
+    .nav-links a:hover { color:var(--gold-light); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:0; border-radius:999px; padding:13px 21px; font-weight:800; cursor:pointer; transition:transform .2s, box-shadow .2s, background .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-gold { color:#15213a; background:linear-gradient(135deg,var(--gold-light),var(--gold)); box-shadow:0 9px 24px rgba(232,182,75,.22); }
+    .btn-outline { color:#fff; border:1px solid rgba(255,255,255,.45); background:rgba(255,255,255,.05); }
+    .hero { position:relative; overflow:hidden; color:#fff; background:radial-gradient(ellipse at 80% 20%,rgba(33,100,160,.42),transparent 35%),linear-gradient(125deg,#06172d 0%,#0b2c52 60%,#123b61 100%); }
+    .hero:before { content:""; position:absolute; width:460px; height:460px; border:1px solid rgba(232,182,75,.18); border-radius:50%; right:-160px; bottom:-240px; box-shadow:0 0 0 42px rgba(232,182,75,.035),0 0 0 84px rgba(232,182,75,.025); }
+    .hero-inner { max-width:1180px; margin:auto; padding:88px 24px 94px; display:grid; grid-template-columns:1.25fr .75fr; gap:55px; align-items:center; position:relative; z-index:1; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; text-transform:uppercase; letter-spacing:.17em; font-size:.76rem; font-weight:800; color:var(--gold-light); margin-bottom:20px; }
+    .eyebrow:before { content:""; width:30px; height:2px; background:var(--gold); }
+    h1 { font-size:clamp(2.45rem,5vw,4.7rem); line-height:1.06; letter-spacing:-.045em; max-width:760px; }
+    h1 span { color:var(--gold-light); }
+    .hero-copy { max-width:650px; color:#d6e2f1; font-size:1.08rem; margin:24px 0 30px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .trust-row { display:flex; flex-wrap:wrap; gap:18px; margin-top:31px; color:#d3deed; font-size:.87rem; }
+    .trust-row span:before { content:"✓"; color:var(--gold-light); font-weight:900; margin-right:7px; }
+    .hero-card { padding:28px; border:1px solid rgba(255,255,255,.2); border-radius:26px; background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045)); box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+    .globe { width:72px; height:72px; display:grid; place-items:center; border-radius:22px; background:rgba(232,182,75,.13); border:1px solid rgba(232,182,75,.35); font-size:2.2rem; margin-bottom:21px; }
+    .hero-card h2 { font-size:1.35rem; margin-bottom:9px; }
+    .hero-card p { color:#d1deed; font-size:.94rem; }
+    .mini-list { list-style:none; margin-top:20px; display:grid; gap:13px; }
+    .mini-list li { display:flex; align-items:center; gap:11px; color:#f2f6fc; font-size:.92rem; }
+    .mini-list b { color:var(--gold-light); font-size:1.05rem; }
+    section { padding:76px 24px; }
+    .container { max-width:1180px; margin:auto; }
+    .section-kicker { text-transform:uppercase; letter-spacing:.16em; color:#a7791d; font-weight:900; font-size:.75rem; margin-bottom:12px; }
+    .section-title { color:var(--navy); font-size:clamp(1.9rem,3.5vw,3rem); line-height:1.15; letter-spacing:-.035em; }
+    .section-lead { color:var(--muted); max-width:700px; margin-top:16px; }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:35px; }
+    .service { padding:25px; background:#fff; border:1px solid #e8edf5; border-radius:20px; box-shadow:0 10px 30px rgba(15,36,66,.045); }
+    .service-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:15px; background:#fff5db; font-size:1.45rem; margin-bottom:17px; }
+    .service h3 { color:var(--navy); font-size:1.08rem; margin-bottom:8px; }
+    .service p { color:var(--muted); font-size:.94rem; }
+    .steps-section { background:#edf2f8; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:32px; }
+    .step { display:flex; gap:15px; align-items:flex-start; }
+    .step-num { flex-shrink:0; display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:var(--navy); color:var(--gold-light); font-weight:900; }
+    .step h3 { color:var(--navy); margin:4px 0 7px; }
+    .step p { color:var(--muted); font-size:.94rem; }
+    .cta { padding:0 24px 76px; background:#edf2f8; }
+    .cta-box { max-width:1180px; margin:auto; border-radius:28px; padding:42px; background:linear-gradient(120deg,#0a2342,#123d64); color:#fff; display:flex; align-items:center; justify-content:space-between; gap:25px; overflow:hidden; position:relative; }
+    .cta-box:after { content:""; position:absolute; width:230px; height:230px; border:1px solid rgba(255,255,255,.12); border-radius:50%; right:15%; top:-160px; box-shadow:0 0 0 30px rgba(255,255,255,.025),0 0 0 60px rgba(255,255,255,.02); }
+    .cta-box h2 { font-size:clamp(1.6rem,3vw,2.5rem); line-height:1.15; position:relative; z-index:1; }
+    .cta-box p { color:#d2deeb; margin-top:10px; position:relative; z-index:1; }
+    .cta-box .btn { position:relative; z-index:1; flex-shrink:0; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:30px; }
+    .contact-card { background:#fff; border:1px solid #e8edf5; border-radius:20px; padding:25px; }
+    .contact-card h3 { color:var(--navy); margin-bottom:9px; }
+    .contact-card p,.contact-card a { color:var(--muted); overflow-wrap:anywhere; }
+    .contact-card a:hover { color:#a7791d; }
+    .notice { margin-top:24px; border-left:4px solid var(--gold); padding:15px 18px; background:#fff8e7; border-radius:0 12px 12px 0; color:#66552f; font-size:.91rem; }
+    footer { background:#041326; color:#c8d4e3; padding:30px 24px; }
+    .footer-inner { max-width:1180px; margin:auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center; font-size:.88rem; }
+    .footer-brand { color:#fff; font-weight:800; }
+    .footer-tag { color:var(--gold-light); display:block; font-size:.78rem; margin-top:3px; }
+    .whatsapp { position:fixed; bottom:19px; right:19px; z-index:20; width:56px; height:56px; display:grid; place-items:center; border-radius:50%; background:#20c66b; color:#fff; font-size:1.55rem; box-shadow:0 9px 28px rgba(0,0,0,.23); border:3px solid #fff; }
+    .whatsapp:hover { transform:translateY(-3px); }
+    @media (max-width:850px) {
+      .nav-links { display:none; }
+      .hero-inner { grid-template-columns:1fr; padding-top:64px; gap:34px; }
+      .hero-card { max-width:560px; }
+      .services-grid { grid-template-columns:repeat(2,1fr); }
+      .steps { grid-template-columns:1fr; }
+      .cta-box { align-items:flex-start; flex-direction:column; padding:32px 25px; }
     }
-
-    .hero-copy {
-        text-align: center;
+    @media (max-width:560px) {
+      .topbar { justify-content:center; text-align:center; }
+      .nav { padding:12px 17px; }
+      .brand-name { font-size:.8rem; }
+      .brand-name small { font-size:.6rem; }
+      .brand-mark { width:40px; height:40px; }
+      .nav > .btn { padding:10px 14px; font-size:.84rem; }
+      .hero-inner { padding:54px 20px 65px; }
+      .hero-copy { font-size:1rem; }
+      section { padding:58px 20px; }
+      .services-grid,.contact-grid { grid-template-columns:1fr; }
+      .service { padding:22px; }
+      .cta { padding:0 20px 58px; }
+      .cta-box { border-radius:22px; }
+      .hero-actions .btn { width:100%; }
+      .whatsapp { width:51px; height:51px; right:13px; bottom:13px; }
     }
-
-    .hero-copy > p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-copy .buttons {
-        justify-content: center;
-    }
-
-    .visual-card {
-        width: 100%;
-        max-width: 480px;
-        margin: auto;
-    }
-
-    .about-grid,
-    .steps {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 620px) {
-    nav {
-        padding: 12px 4%;
-        flex-wrap: wrap;
-    }
-
-    .logo-box {
-        width: 43px;
-        height: 43px;
-    }
-
-    .brand-text h2 {
-        font-size: 11px;
-    }
-
-    .brand-text span {
-        font-size: 8px;
-    }
-
-    .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
-    }
-
-    .nav-links a {
-        font-size: 11px;
-    }
-
-    .nav-links .nav-cta {
-        padding: 8px 10px;
-    }
-
-    .hero {
-        padding: 50px 5%;
-    }
-
-    .hero h1 {
-        font-size: 41px;
-        letter-spacing: -1px;
-    }
-
-    .hero-copy > p {
-        font-size: 14px;
-    }
-
-    .btn {
-        padding: 13px 15px;
-        font-size: 12px;
-    }
-
-    section.content-section {
-        padding: 55px 5%;
-    }
-
-    .about-grid,
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-section {
-        padding: 20px 5% 60px;
-    }
-
-    .cta-box {
-        padding: 40px 18px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-    }
-}
-</style>
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <span>Supporting your international education journey</span>
+    <span><a href="mailto:eliteglobalpathwaysltd2025@gmail.com">eliteglobalpathwaysltd2025@gmail.com</a> &nbsp;·&nbsp; <a href="https://wa.me/256779989906" target="_blank" rel="noopener">WhatsApp: +256 779 989 906</a></span>
+  </div>
 
-<div class="background">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
-</div>
-
-<nav>
-    <a href="#home" class="brand">
-        <div class="logo-box">
-            <img class="company-logo" src="https://i.imgur.com/5i5LAen.png" alt="Elite Global Pathways logo">
-            <span class="logo-fallback" style="display:none">EG</span>
-        </div>
-
-        <div class="brand-text">
-            <h2>ELITE GLOBAL PATHWAYS</h2>
-            <span>Limited</span>
-        </div>
-    </a>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Elite Global Pathways home">
+        <span class="brand-mark"><img src="https://i.imgur.com/5i5LAen.png" alt="Elite Global Pathways logo" onerror="if(!this.dataset.tried){this.dataset.tried='1';this.src='https://i.imgur.com/5i5LAen.jpg'}else{this.style.display='none';this.nextElementSibling.style.display='block'}"><span class="brand-fallback" style="display:none">EGP</span></span>
+        <span class="brand-name">ELITE GLOBAL PATHWAYS LIMITED<small>YOUR GLOBAL FUTURE</small></span>
+      </a>
+      <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#services">Our Support</a>
         <a href="#process">How It Works</a>
-        <a href="#apply" class="nav-cta">Get Started ↗</a>
-    </div>
-</nav>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform" target="_blank" rel="noopener">Apply Now ↗</a>
+    </nav>
+  </header>
 
-<main id="home">
-
-    <section class="hero">
-
-        <div class="hero-copy">
-            <span class="badge">🌍 CONNECTING AFRICA TO GLOBAL EDUCATION</span>
-
-            <h1>
-                Your Dreams.<br>
-                Our Pathway.<br>
-                <span class="gradient-text">Your Global Future.</span>
-            </h1>
-
-            <p>
-                Take the next step toward your educational future.
-                Elite Global Pathways Limited helps African students
-                explore international universities, suitable programmes,
-                admission requirements and available funding opportunities.
-            </p>
-
-            <div class="buttons">
-                <a class="btn btn-primary"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLScmMzx7U5Md1tw7ULWtJZuEDtYqTJxu_UHOGr5e57DBJ1bfXA/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Join Our Community ↗
-                </a>
-
-                <a class="btn btn-secondary"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Apply Now →
-                </a>
-            </div>
-        </div>
-
-        <div class="visual-card">
-
-            <div class="visual-logo">
-                <img class="company-logo" src="https://i.imgur.com/5i5LAen.png" alt="Elite Global Pathways Limited logo">
-                <span class="logo-fallback" style="display:none">EG</span>
-            </div>
-
-            <h2>Build Your Global Future</h2>
-
-            <p>Connecting ambitious students with international education possibilities.</p>
-
-            <div class="feature">
-                <div class="feature-icon">🎓</div>
-                <div>
-                    <h3>Education Guidance</h3>
-                    <p>Explore programmes and potential study destinations.</p>
-                </div>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">🌍</div>
-                <div>
-                    <h3>Global Opportunities</h3>
-                    <p>Learn about international education pathways.</p>
-                </div>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">📚</div>
-                <div>
-                    <h3>Application Preparation</h3>
-                    <p>Understand requirements and prepare your application.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="content-section" id="about">
-
-        <div class="section-heading">
-            <span>Who We Are</span>
-            <h2>Education Without <span class="gradient-text">Borders</span></h2>
-            <p>
-                We aim to make international education pathways easier
-                to understand by helping students explore their options
-                and prepare for the next stage of their academic journey.
-            </p>
-        </div>
-
-        <div class="about-grid">
-            <article class="info-card">
-                <div class="icon">🎯</div>
-                <h3>Our Mission</h3>
-                <p>To help African students explore international education opportunities and make informed academic decisions.</p>
-            </article>
-
-            <article class="info-card">
-                <div class="icon">🚀</div>
-                <h3>Our Vision</h3>
-                <p>A future where students can better understand educational opportunities beyond their borders.</p>
-            </article>
-
-            <article class="info-card">
-                <div class="icon">🤝</div>
-                <h3>Our Commitment</h3>
-                <p>To provide clear information and guidance throughout the education exploration and application process.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="content-section" id="process">
-
-        <div class="section-heading">
-            <span>Your Journey</span>
-            <h2>Three Steps Toward <span class="gradient-text">Your Future</span></h2>
-            <p>Start by understanding your options and preparing your academic information.</p>
-        </div>
-
-        <div class="steps">
-            <article class="step">
-                <div class="step-number">1</div>
-                <h3>Register</h3>
-                <p>Join our community by submitting the short registration form.</p>
-                <a class="btn btn-secondary"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLScmMzx7U5Md1tw7ULWtJZuEDtYqTJxu_UHOGr5e57DBJ1bfXA/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Register ↗
-                </a>
-            </article>
-
-            <article class="step">
-                <div class="step-number">2</div>
-                <h3>Share Your Goals</h3>
-                <p>Complete the application form with your academic background and study interests.</p>
-                <a class="btn btn-secondary"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Apply ↗
-                </a>
-            </article>
-
-            <article class="step">
-                <div class="step-number">3</div>
-                <h3>Explore Your Options</h3>
-                <p>Research suitable programmes, entry requirements, costs and possible funding opportunities.</p>
-                <a class="btn btn-secondary" href="#apply">Get Started ↗</a>
-            </article>
-        </div>
-    </section>
-
-    <section class="cta-section" id="apply">
-        <div class="cta-box">
-            <h2>Your Next Chapter <span class="gradient-text">Starts Here.</span></h2>
-            <p>
-                Take the first step toward exploring international education.
-                Register with our community or complete the student application form.
-            </p>
-
-            <div class="buttons">
-                <a class="btn btn-primary"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLScmMzx7U5Md1tw7ULWtJZuEDtYqTJxu_UHOGr5e57DBJ1bfXA/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Join Our Community ↗
-                </a>
-
-                <a class="btn btn-pink"
-                   href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform"
-                   target="_blank" rel="noopener noreferrer">
-                    Complete Application ↗
-                </a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <div class="footer-content">
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
         <div>
-            <div class="footer-brand">ELITE <span>GLOBAL PATHWAYS</span> LIMITED</div>
-            <p>Connecting African Students to Global Education.</p>
+          <div class="eyebrow">Your journey starts here</div>
+          <h1>Your Dreams.<br><span>Our Pathway.</span><br>Your Global Future.</h1>
+          <p class="hero-copy">Explore international higher-education opportunities with guidance designed around your academic goals. We help students discover suitable universities, understand entry requirements, and explore scholarships and tuition-reduction opportunities.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform" target="_blank" rel="noopener">Start Your Application <span>→</span></a>
+            <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScmMzx7U5Md1tw7ULWtJZuEDtYqTJxu_UHOGr5e57DBJ1bfXA/viewform" target="_blank" rel="noopener">Join Our Community ↗</a>
+            <a class="btn btn-outline" href="#services">Explore Our Support</a>
+          </div>
+          <div class="trust-row">
+            <span>Student-focused guidance</span>
+            <span>International study options</span>
+            <span>Scholarship exploration</span>
+          </div>
         </div>
+        <aside class="hero-card">
+          <div class="globe">🌍</div>
+          <h2>Take the next step toward studying abroad.</h2>
+          <p>Register your interest so our team can better understand your education background, preferred destination, and plans.</p>
+          <ul class="mini-list">
+            <li><b>✓</b> Share your academic goals</li>
+            <li><b>✓</b> Explore possible study destinations</li>
+            <li><b>✓</b> Learn about relevant application support</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#process">Our Process</a>
-            <a href="#apply">Apply</a>
+    <section id="about">
+      <div class="container">
+        <div class="section-kicker">About us</div>
+        <h2 class="section-title">A clearer pathway to global education.</h2>
+        <p class="section-lead">Elite Global Pathways Limited is dedicated to connecting African students with international higher-education opportunities. We guide students as they explore academic programmes, admission requirements, scholarship possibilities, and preparation for their study-abroad journey.</p>
+      </div>
+    </section>
+
+    <section id="services" style="padding-top:0">
+      <div class="container">
+        <div class="section-kicker">Our support</div>
+        <h2 class="section-title">Guidance for each stage of your journey.</h2>
+        <p class="section-lead">Start with your goals. We can help you understand the options and next steps that may be relevant to your situation.</p>
+        <div class="services-grid">
+          <article class="service"><div class="service-icon">🎓</div><h3>University & Programme Search</h3><p>Explore institutions and academic programmes that may align with your qualifications and interests.</p></article>
+          <article class="service"><div class="service-icon">📋</div><h3>Admission Guidance</h3><p>Understand common entry requirements and the documents institutions may request.</p></article>
+          <article class="service"><div class="service-icon">🏅</div><h3>Scholarship Exploration</h3><p>Identify potential scholarship or tuition-reduction opportunities and review their eligibility criteria.</p></article>
+          <article class="service"><div class="service-icon">🧭</div><h3>Study Destination Planning</h3><p>Compare destinations and consider factors such as programme fit, costs, and entry requirements.</p></article>
+          <article class="service"><div class="service-icon">🗂️</div><h3>Application Preparation</h3><p>Get guidance on preparing information and organizing documents for university applications.</p></article>
+          <article class="service"><div class="service-icon">✈️</div><h3>Study-Abroad Readiness</h3><p>Learn about planning steps and where to find official information about travel and visa processes.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="steps-section" id="process">
+      <div class="container">
+        <div class="section-kicker">How it works</div>
+        <h2 class="section-title">Three simple steps to get started.</h2>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div><h3>Complete the form</h3><p>Tell us about your education, preferred destination, intended course, and support needs.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Our team reviews your details</h3><p>Your information helps us understand your goals and consider potentially relevant options.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Discuss possible next steps</h3><p>We may contact you using the details you provide to discuss relevant information and support.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-box">
+        <div><h2>Ready to explore your options?</h2><p>Begin your student registration with Elite Global Pathways Limited.</p></div>
+        <a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSe2hekhm_IY-qf8N0xLD2SPz5x4rNhgiuI2d_pxmC1dlM4MtQ/viewform" target="_blank" rel="noopener">Apply Online Now ↗</a>
+      </div>
     </div>
 
-    <div class="disclaimer">
-        <strong>Important notice:</strong>
-        Submitting a registration or application form does not guarantee
-        university admission, a scholarship, financial assistance or a visa.
-        Eligibility and decisions are determined by the relevant institutions
-        and authorities. Verify opportunities and fees before making payments
-        or sharing sensitive documents.
+    <section id="contact">
+      <div class="container">
+        <div class="section-kicker">Get in touch</div>
+        <h2 class="section-title">We’re here to help you take the next step.</h2>
+        <p class="section-lead">For enquiries about registration and international study opportunities, contact our team.</p>
+        <div class="contact-grid">
+          <div class="contact-card"><h3>✉️ Email us</h3><p><a href="mailto:eliteglobalpathwaysltd2025@gmail.com">eliteglobalpathwaysltd2025@gmail.com</a></p></div>
+          <div class="contact-card"><h3>💬 WhatsApp</h3><p><a href="https://wa.me/256779989906" target="_blank" rel="noopener">+256 779 989 906 · Chat with us</a></p></div>
+        </div>
+        <div class="notice"><strong>Important notice:</strong> Submitting an expression of interest does not guarantee university admission, a scholarship, or a visa. Scholarship availability and eligibility depend on the institution and programme. Applicants should verify requirements through official institution and government sources.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-brand">ELITE GLOBAL PATHWAYS LIMITED</div><span class="footer-tag">Your Dreams. Our Pathway. Your Global Future.</span></div>
+      <div>© <span id="year"></span> Elite Global Pathways Limited. All rights reserved.</div>
     </div>
+  </footer>
 
-    <p style="text-align:center;margin-top:22px">
-        © <span id="year"></span> Elite Global Pathways Limited. All rights reserved.
-    </p>
-</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/*
-  Try common Imgur image formats.
-  If the image URL is not correct, the logo falls back to "EG".
-*/
-document.querySelectorAll(".company-logo").forEach(function(img) {
-    const extensions = ["png", "jpg", "jpeg", "webp"];
-    let index = 0;
-
-    img.onerror = function() {
-        index++;
-
-        if (index < extensions.length) {
-            img.src = "https://i.imgur.com/5i5LAen." + extensions[index];
-        } else {
-            img.style.display = "none";
-
-            const fallback = img.nextElementSibling;
-            if (fallback) fallback.style.display = "block";
-        }
-    };
-
-    img.src = "https://i.imgur.com/5i5LAen.png";
-});
-</script>
-
+  <a class="whatsapp" href="https://wa.me/256779989906" target="_blank" rel="noopener" aria-label="Contact Elite Global Pathways on WhatsApp">✆</a>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
